@@ -86,17 +86,23 @@ namespace Lesson3
             }
             Phone[] phones = new Phone[]
                 {
-                    new Phone() {brand = "Apple", model = "IPhone", color = "black", size = 4.7  },
-                    new Phone() {brand = "Samsung", model = "galaxy", color = "white", size = 5.5  },
-                    new Phone() {brand = "Sony", model = "Xperia", color = "red", size = 5.0  }
+                    new Phone() {brand = Brands.Apple, model = "IPhone", color = "black", size = 4.7  },
+                    new Phone() {brand = Brands.Samsung, model = "galaxy", color = "white", size = 5.5  },
+                    new Phone() {brand = Brands.LG, model = "Xperia", color = "red", size = 5.0  }
                 };
             for (int i = 0; i < phones.Length; i++)
             {
                 if (phones[i].model == "IPhone")
                     Console.WriteLine(phones[i].color);
             }
+            foreach (Phone phone in phones)
+            {
+                if (phone.model == "IPhone")
+                    Console.WriteLine(phone.color);
+            }
             Console.ReadLine();
         }
+        static void f4()
         struct City
         {
             public string name;
@@ -105,10 +111,16 @@ namespace Lesson3
         }
         struct Phone
         {
-            public string brand;
+            public Brands brand;
             public string model;
             public double size;
             public string color;
+        }
+        enum Brands
+        {
+            Apple,
+            LG,
+            Samsung
         }
     }
 }
