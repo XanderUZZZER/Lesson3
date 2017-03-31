@@ -13,7 +13,8 @@ namespace Lesson3
             Console.WriteLine("Lesson 3");
             //f1();            
             //f2();
-            f3();
+            //f3();
+            f4();
         }
         static void f1()
         {
@@ -103,6 +104,35 @@ namespace Lesson3
             Console.ReadLine();
         }
         static void f4()
+        {
+            int[] array = new int[10];
+            Random rnd = new Random();
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = rnd.Next(1, 100);
+                Console.Write(array[i] + " ");
+            }
+            Console.WriteLine();
+            int temp ;
+            for (int i = 0; i < array.Length; i++)
+            {
+                for (int j = 0; j < array.Length-i-1; j++)
+                {
+                    if (array[j] > array[j + 1])
+                    {
+                        temp = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = temp;
+                    }
+                }
+            }
+            for (int i = 0; i < array.Length; i++)
+            {
+                
+                Console.Write(array[i] + " ");
+            }
+            Console.Read();
+        }
         struct City
         {
             public string name;
